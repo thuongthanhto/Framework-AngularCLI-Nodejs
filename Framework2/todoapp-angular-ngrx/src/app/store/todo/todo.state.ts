@@ -1,33 +1,33 @@
-import Todo from './../models/todo.model';
+import Todo from '../../models/todo.model';
 
 export interface TodoState extends Todo{
-    loading: boolean;
+    loading:boolean;
 
     editable: boolean;
     edited: boolean;
-    editing: boolean;
+    editing:boolean;
 
     selected: boolean;
-    refreshing: boolean;
+    refreshing:boolean;
 
     create: boolean;
 
     error: boolean;
 }
 
-export const initializeTodoState = function(){
+export  const initializeTodoState  = function() {
     return {
         loading: false,
-
+    
         editable: true,
         edited: false,
-        editing: false,
-
+        editing:false,
+    
         selected: false,
-        refreshing: false,
+        refreshing:false,
 
         create: true,
-
+        
         error: false,
     }
 }
@@ -38,9 +38,9 @@ export interface TodoListState{
     pending: number;
 }
 
-export const initalizeTodoListState = function(){
+export const  intializeTodoListState = function(){
     return {
         loading: false,
-        pending: 0,
+        pedning: 0,
     }
 }

@@ -20,8 +20,9 @@
 
       </ul>
       <!-- Links -->
-      <a [routerLink]="['/login']" class="nav-link waves-light white-text" mdbWavesEffect>Login</a>
-      <a [routerLink]="['/register']" class="nav-link waves-light white-text" mdbWavesEffect>Register</a>
+      <a [routerLink]="['/login']" *ngIf="!_authService.loggedIn()" class="nav-link waves-light white-text" mdbWavesEffect>Login</a>
+      <a [routerLink]="['/register']" *ngIf="!_authService.loggedIn()" class="nav-link waves-light white-text" mdbWavesEffect>Register</a>
+      <a [routerLink]="['/register']" style="cursor: pointer;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" class="nav-link waves-light white-text" mdbWavesEffect>Logout</a>
   </links>
   <!-- Collapsible content -->
 
